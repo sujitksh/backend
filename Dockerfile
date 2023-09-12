@@ -2,6 +2,5 @@ FROM node:18-alpine
 WORKDIR app
 COPY . .
 RUN npm install
-RUN npm install -g nodemon
 EXPOSE 8000
-CMD ['npm ','start']
+CMD ['node ','index.js']
