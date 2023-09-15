@@ -4,7 +4,7 @@ pipeline {
         stage('Code') { 
             steps {
                 echo "cloning the code "
-                git url:"https://github.com/sujitksh/frontend.git",branch:"master"
+                git url:"https://github.com/sujitksh/backend.git",branch:"master"
             }
         }
         stage('Build') { 
