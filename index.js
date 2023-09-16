@@ -3,9 +3,13 @@ import express from "express"
 const app = express()
 dotenv.config();
 const port = 8000
+const apiData = [
+    {"name":"sujit","age":"20","city":"Bihar"},
+    {"name":"aman","age":"29","city":"Pune"}
+]
 
 app.get("/api/test",(req,res)=>{
-    res.json({ message: 'Hello World' });
+    res.json(apiData);
 })
 
 app.listen(port,()=>{
