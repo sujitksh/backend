@@ -4,8 +4,8 @@ const app = express()
 dotenv.config();
 const port = 8000
 
-app.get("/test",(req,res)=>{
-    return res.send("Hello World")
+app.get("/api/test",(req,res)=>{
+    res.json({ message: 'Hello World' });
 })
 
 app.listen(port,()=>{
