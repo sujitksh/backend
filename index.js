@@ -1,17 +1,17 @@
 import dotenv from "dotenv"
 import express from "express"
 import cors from "cors"
+import StudentModel from "./models/Student.model.js"
+import {connectDB} from "./config/db.js"
 const app = express()
 app.use(cors())
 dotenv.config();
 const port = 8000
-const apiData = [
-    {"name":"sujit","age":"20","city":"Bihar"},
-    {"name":"aman","age":"29","city":"Pune"}
-]
+connectDB();
 
-app.get("/api/test",(req,res)=>{
-    res.json(apiData);
+app.get("/api/test",async(req,res)=>{
+    const data = await StudentModel.find()
+    res.json(data);
 })
 
 app.listen(port,()=>{
